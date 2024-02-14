@@ -1,26 +1,18 @@
+import java.time.LocalDateTime;
+
 public abstract class Vehiclee {
     public static int id;
     private String registationNo;
-    private String parkingHour;
-    private String parkingDate;
-    private String unParkingHour;
+    private String parkingTime;
     private String payment;
 
-    public Vehiclee(String registationNo, String parkingHour, String parkingDate) {
+    public Vehiclee(String registationNo) {
         this.registationNo = registationNo;
-        this.parkingHour = parkingHour;
-        this.parkingDate = parkingDate;
     }
 
     public abstract void park();
+    public abstract void pay();
 
-    public static int getId() {
-        return id;
-    }
-
-    public static void setId(int id) {
-        Vehiclee.id = id;
-    }
 
     public String getRegistationNo() {
         return registationNo;
@@ -30,35 +22,27 @@ public abstract class Vehiclee {
         this.registationNo = registationNo;
     }
 
-    public String getParkingHour() {
-        return parkingHour;
+    public String getParkingTime() {
+        return parkingTime;
     }
 
-    public void setParkingHour(String parkingHour) {
-        this.parkingHour = parkingHour;
-    }
-
-    public String getParkingDate() {
-        return parkingDate;
-    }
-
-    public void setParkingDate(String parkingDate) {
-        this.parkingDate = parkingDate;
-    }
-
-    public String getUnParkingHour() {
-        return unParkingHour;
-    }
-
-    public void setUnParkingHour(String unParkingHour) {
-        this.unParkingHour = unParkingHour;
+    public void setParkingTime(String parkingTime) {
+        this.parkingTime = parkingTime;
     }
 
     public String getPayment() {
         return payment;
     }
 
-    public void setPayment(String paiment) {
-        this.payment = paiment;
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int id) {
+        Vehiclee.id = id;
     }
 }

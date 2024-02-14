@@ -1,3 +1,7 @@
+import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.format.DateTimeFormatter;
+
 public class Main {
     public static void main(String[] args) {
         //Testing Car class and objects
@@ -7,10 +11,12 @@ public class Main {
 
 
         Park promenadaParking = new Park();
-        promenadaParking.addParkedCar(new Car("B800YAM","20:33","13-FEB-2024"));
-        promenadaParking.payParking(0,"cash");
-        promenadaParking.payParking(2,"card");
-        promenadaParking.showParkedCars();
+        promenadaParking.addParkedCar(new Car("B800YAM"));
+       // promenadaParking.payParking(0,"cash");
+//        promenadaParking.payParking(2,"card");
+//        promenadaParking.showParkedCars();
+//        promenadaParking.removeParkedCar(0);
+//        promenadaParking.showParkedCars();
 
     }
 }
