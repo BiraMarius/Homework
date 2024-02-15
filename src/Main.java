@@ -12,6 +12,8 @@ public class Main {
 
         Park promenadaParking = new Park();
         promenadaParking.addParkedCar(new Car("B800YAM"));
+        promenadaParking.showParkedCars();
+        promenadaParking.pay("B800YAM","cash");
        // promenadaParking.payParking(0,"cash");
 //        promenadaParking.payParking(2,"card");
 //        promenadaParking.showParkedCars();

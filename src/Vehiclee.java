@@ -3,7 +3,8 @@ import java.time.LocalDateTime;
 public abstract class Vehiclee {
     public static int id;
     private String registationNo;
-    private String parkingTime;
+    private LocalDateTime parkingTime;
+    private LocalDateTime unParkingTime;
     private String payment;
 
     public Vehiclee(String registationNo) {
@@ -11,8 +12,14 @@ public abstract class Vehiclee {
     }
 
     public abstract void park();
-    public abstract void pay();
 
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int id) {
+        Vehiclee.id = id;
+    }
 
     public String getRegistationNo() {
         return registationNo;
@@ -22,12 +29,20 @@ public abstract class Vehiclee {
         this.registationNo = registationNo;
     }
 
-    public String getParkingTime() {
+    public LocalDateTime getParkingTime() {
         return parkingTime;
     }
 
-    public void setParkingTime(String parkingTime) {
+    public void setParkingTime(LocalDateTime parkingTime) {
         this.parkingTime = parkingTime;
+    }
+
+    public LocalDateTime getUnParkingTime() {
+        return unParkingTime;
+    }
+
+    public void setUnParkingTime(LocalDateTime unParkingTime) {
+        this.unParkingTime = unParkingTime;
     }
 
     public String getPayment() {
@@ -36,13 +51,5 @@ public abstract class Vehiclee {
 
     public void setPayment(String payment) {
         this.payment = payment;
-    }
-
-    public static int getId() {
-        return id;
-    }
-
-    public static void setId(int id) {
-        Vehiclee.id = id;
     }
 }

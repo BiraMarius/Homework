@@ -1,5 +1,4 @@
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,18 +12,32 @@ public class Park {
         carAdded.park();
     }
 
-//    public void payParking(int indexOfPaidCar, String paymentMethod){
-//        try{
-//            int i = indexOfPaidCar;
-//            cars.get(i).getId();
-//            cars.get(i).setPayment("paid");
-//            System.out.println("Parking "+cars.get(i).getPayment());
-//
-//        }
-//        catch (Exception carNotFound){
-//            System.out.println("Parking not paid, car not found!");
-//        }
-//    }
+    public void pay(String registrationNo,String payment){
+        int index=findIndexByPlate(registrationNo, cars);
+        LocalDateTime parkingTime = cars.get(index).getParkingTime();
+        cars.get(index).setUnParkingTime(unParkingTime());
+        LocalDateTime unParkingTime = cars.get(index).getUnParkingTime();
+        Duration durationOfParking = Duration.between(parkingTime, unParkingTime);
+        long hours = durationOfParking.toHours();
+        System.out.println("Time parked: "+hours);
+        int valuePerHour = 10;
+        if(hours-1 > 1){
+            long price = (hours-1)*10;
+            System.out.println("Price for parking is: "+price);
+            System.out.println("You paid with "+payment+".");
+            cars.get(index).setPayment(payment);
+            removeParkedCar(index);
+        } else {
+            System.out.println("Free parking!");
+            removeParkedCar(index);
+        }
+    }
+
+    public int findIndexByPlate(String registrationNo, List<Car> cars){
+        for(int i=0; i<= cars.size();i++){
+            if(cars.get(i).getRegistationNo() == registrationNo){ return i;}
+        } return -1;
+    }
 
     public void showParkedCars(){
         for(int i=0; i<=cars.size()-1;i++){
@@ -38,22 +51,29 @@ public class Park {
         cars.remove(i);
     }
 
-    public String parkingTime(){
+    // Fixed parsing DateTime
+    public LocalDateTime parkingTime(){
         LocalDateTime parkingTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
-        String formattedParkingTime = parkingTime.format(formatter);
-        //LocalDateTime parsedParkingTime = LocalDateTime.parse(formattedParkingTime, formatter);
-        return formattedParkingTime;
-        //LocalDateTime formattedParkingTime = LocalDateTime.parse(parkingTime.format(formatter));
+        return parkingTime;
     }
 
-    public String unParkingTime(){
-        LocalDateTime unparkingTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy");
-        String formattedunParkingTime = unparkingTime.format(formatter);
-        return formattedunParkingTime;
+    public LocalDateTime unParkingTime(){
+        LocalDateTime unParkingTime = LocalDateTime.now();
+        return unParkingTime;
     }
 
-
+//    public void payParking(int indexOfPaidCar, String paymentMethod){
+//
+//        try{
+//            int i = indexOfPaidCar;
+//            cars.get(i).getId();
+//            cars.get(i).setPayment("paid");
+//            System.out.println("Parking "+cars.get(i).getPayment());
+//
+//        }
+//        catch (Exception carNotFound){
+//            System.out.println("Parking not paid, car not found!");
+//        }
+//    }
 
 }

@@ -1,6 +1,6 @@
 tema>
         X-remove from parking
-        -adauga ora de intrare si ora de iesire per masina si adauga metoda plata
+        X-adauga ora de intrare si ora de iesire per masina si adauga metoda plata
         -conceptul de prima ora gratis
         -metoda statistica de evidentiere a nr de masini de pe o anumita zi ( clasa raport cu id static)
         -folosire set pentru a retine rapoartele
