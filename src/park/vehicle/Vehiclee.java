@@ -1,7 +1,11 @@
+package park.vehicle;
+
 import java.time.LocalDateTime;
 
 public abstract class Vehiclee {
+
     public static int id;
+    private int co;//trebuie schimbat id cu co, co fiind counterul de fapt
     private String registationNo;
     private LocalDateTime parkingTime;
     private LocalDateTime unParkingTime;
@@ -9,6 +13,7 @@ public abstract class Vehiclee {
 
     public Vehiclee(String registationNo) {
         this.registationNo = registationNo;
+        ++id;
     }
 
     public abstract void park();
@@ -18,7 +23,7 @@ public abstract class Vehiclee {
     }
 
     public static void setId(int id) {
-        Vehiclee.id = id;
+        Vehiclee.id = ++id;
     }
 
     public String getRegistationNo() {

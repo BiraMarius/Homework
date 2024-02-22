@@ -1,7 +1,47 @@
 tema>
         X-remove from parking
         X-adauga ora de intrare si ora de iesire per masina si adauga metoda plata
-        -conceptul de prima ora gratis
+        X-conceptul de prima ora gratis
         -metoda statistica de evidentiere a nr de masini de pe o anumita zi ( clasa raport cu id static)
-        -folosire set pentru a retine rapoartele
-        -daca sunt 2 zile fara intrari in parcare nu genera raport.
+
+
+Tema>
+
+   1) Adauga o functie remove from parking
+   2) Adauga pentru fiecare masina ora de intrare, ora de iesire si metoda de plata
+   3) Pentru calcularea pretului parcarii sa se adauge conceptul de prima ora gratis
+   4) Sa se creeze o metoda statica de evidentiere a nr de masini de pe o anumita zi
+
+
+   Citire despre clasa Object @Carte
+   equals() & Hashcode()
+
+
+   Targets:
+   Lista de rapoarte cu LinkedList
+   Un raport are ID, Data, nr masini intrate, nr masini iesite, nr masini lasate in parcare, total incasari.
+   Extrage toate obiectele de tip raport in fiesier .txt
+   Serializare cu fisiere
+
+   Links>
+    Andrei Bartic
+    17:46
+    https://medium.com/@basecs101/comparing-arraylist-and-linkedlist-in-java-latest-2b133b29489f
+    Andrei Bartic
+    17:47
+    https://www.baeldung.com/java-insert-object-arraylist-specific-position
+    Andrei Bartic
+    19:04
+    https://rollbar.com/blog/how-to-catch-and-fix-nullpointerexception-in-java/
+    Andrei Bartic
+    19:12
+    https://www.baeldung.com/java-ternary-operator
+    Andrei Bartic
+    19:22
+    https://www.tutorialspoint.com/log4j/log4j_sample_program.htm
+    Andrei Bartic
+    19:25
+    https://www.w3schools.com/java/java_enums.asp
+    Andrei Bartic
+    19:33
+    https://www.digitalocean.com/community/tutorials/serialization-in-java

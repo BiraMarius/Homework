@@ -1,5 +1,6 @@
+package park.vehicle;
+
 import java.time.LocalDateTime;
-import java.time.Duration;
 import java.time.format.DateTimeFormatter;
 
 public class Car extends Vehiclee {
@@ -13,7 +14,7 @@ public class Car extends Vehiclee {
                            "Registration number plate:  "+getRegistationNo()+"\n"+
                            "Parking details:  "+parkingTimeF()+"\n"+
                            "Ticket NO: "+getId()+"\n"+
-                           "#################################################");
+                           "#################################################"+"\n");
     }
 
     public String parkingTimeF(){
