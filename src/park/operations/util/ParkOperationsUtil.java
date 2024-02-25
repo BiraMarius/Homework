@@ -16,7 +16,9 @@ public class ParkOperationsUtil extends Object{
         return unParkingTime;
     }
 
-    public static void showParkedCars(){
+    // Both of the methods above are doing the same thing, the only thing that differentiat one from another is the name and returning variable name.
+
+    public static void showParkedCars(List <Car> cars){
         for(int i=0; i<=cars.size()-1;i++){
             cars.get(i).details();
         }

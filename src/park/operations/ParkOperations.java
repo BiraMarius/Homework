@@ -2,8 +2,6 @@ package park.operations;
 
 import park.vehicle.Car;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static park.operations.util.ParkOperationsUtil.*;
@@ -14,6 +12,7 @@ public class ParkOperations implements IParkOperations {
         cars.add(carAdded);
         carAdded.setParkingTime(parkingTime());
         carAdded.park();
+        Car.setId(Car.getId()+1);
     }
 
     public void exitParking(List <Car> cars, int indexOfRemovedCar){
@@ -22,6 +21,23 @@ public class ParkOperations implements IParkOperations {
         cars.remove(i);
     }
 
+    //          !!!!!!!!!!!!!!!!!!!!! WORKING IN PROGRESS
+    public void exitP(List <Car> cars, Car carAdded){
+        carAdded.getId();
+        System.out.println("The car with the registration number of: "+cars.get(carAdded.getId()).getRegistationNo()+" was removed.");
+        cars.remove(carAdded);
+    }
+
+    public static void exitP2(List <Car> cars, Car carAdded){
+        System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
+        cars.remove(carAdded);
+        Car.setId(Car.getId()-1);
+    }
+
+    public void showCars (List <Car> cars){
+        showParkedCars(cars);
+    }
+/*
     public void pay(List<Car> cars,String registrationNo,String payment){
         LocalDateTime parkingTime = getCarParkingTime(registrationNo, cars);
         LocalDateTime unParkingTime = LocalDateTime.now();
@@ -42,6 +58,7 @@ public class ParkOperations implements IParkOperations {
         //TODO6: Extract from 31 to 40 2 methods (calculate place in utility) Extract free hour in constant, in util package build another class with constants.
         //TODO7: https://www.tutorialspoint.com/log4j/log4j_sample_program.htm delete all the System.out.println and use Log4J
         //TODO8: LinkedList for raports
-    }
 
+    }
+*/
 }

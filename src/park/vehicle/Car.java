@@ -1,5 +1,5 @@
 package park.vehicle;
-
+import park.Park.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -10,6 +10,7 @@ public class Car extends Vehiclee {
 
     @Override
     public void park(){
+
         System.out.println("##################  TICKET  #####################\n" +
                            "Registration number plate:  "+getRegistationNo()+"\n"+
                            "Parking details:  "+parkingTimeF()+"\n"+

@@ -21,6 +21,11 @@ public class Park extends ParkOperations {
 
 
 
+    public List<Car> getCars() {
+        return cars;
+    }
 
-
+    public int listSize(){
+        return cars.size();
+    }
 }
