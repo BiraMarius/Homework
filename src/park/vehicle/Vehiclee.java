@@ -3,11 +3,9 @@ package park.vehicle;
 import java.time.LocalDateTime;
 
 public abstract class Vehiclee {
-
-    private static int ct;
-    private static int id=0;//trebuie schimbat id cu co, co fiind counterul de fapt
-
-
+    private static int counter;
+    private static int lastid;
+    private int id;
     private String registationNo;
     private LocalDateTime parkingTime;
     private LocalDateTime unParkingTime;
@@ -15,34 +13,36 @@ public abstract class Vehiclee {
 
     public Vehiclee(String registationNo) {
         this.registationNo = registationNo;
-        //++id;
+        ++counter;
+        id=lastid;
+        lastid++;
+
     }
 
     public abstract void park();
 
-//    public static int getId() {
-//        return id;
-//    }
-//
-//    public static void setId(int id) {
-//        Vehiclee.id = ++id;
-//    }
-
-
-    public static int getCt() {
-        return ct;
+    public static int getCounter() {
+        return counter;
     }
 
-    public static void setCt(int ct) {
-        Vehiclee.ct = ++ct;
+    public static void setCounter(int counter) {
+        Vehiclee.counter = counter;
     }
 
-    public static int getId() {
+    public static int getLastid() {
+        return lastid;
+    }
+
+    public static void setLastid(int lastid) {
+        Vehiclee.lastid = lastid;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public static void setId(int id) {
-        Vehiclee.id = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getRegistationNo() {

@@ -42,10 +42,12 @@ public class Main {
         Park promenadaParking = new Park();
         promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B01YAM"));
         promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B02YAM"));
+        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B03YAM"));
+        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B04YAM"));
         promenadaParking.showCars(promenadaParking.getCars());
         promenadaParking.exitP2(promenadaParking.getCars(),new Car("B01YAM"));
         promenadaParking.showCars(promenadaParking.getCars());
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B03YAM"));
+        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B05YAM"));
 
         // Fix the id problem
 

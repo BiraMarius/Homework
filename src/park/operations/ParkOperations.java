@@ -1,6 +1,7 @@
 package park.operations;
 
 import park.vehicle.Car;
+import park.vehicle.Vehiclee;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class ParkOperations implements IParkOperations {
         cars.add(carAdded);
         carAdded.setParkingTime(parkingTime());
         carAdded.park();
-        Car.setId(Car.getId()+1);
+        carAdded.setId(Vehiclee.getLastid());
     }
 
     public void exitParking(List <Car> cars, int indexOfRemovedCar){
@@ -31,7 +32,7 @@ public class ParkOperations implements IParkOperations {
     public static void exitP2(List <Car> cars, Car carAdded){
         System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
         cars.remove(carAdded);
-        Car.setId(Car.getId()-1);
+        Car.setLastid(Car.getLastid()-1);
     }
 
     public void showCars (List <Car> cars){
