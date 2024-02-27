@@ -12,8 +12,6 @@ import java.util.Set;
 
 public class Park extends ParkOperations {
     private List<Car> cars = new ArrayList<>();
-    //private Set<String> reports = new HashSet<String>();
-    //private Set<Report> reports = new HashSet<>();
 
     public void enter(Car car){
         super.enterIntoParking(cars, car);
@@ -21,11 +19,7 @@ public class Park extends ParkOperations {
 
 
 
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public int listSize(){
-        return cars.size();
-    }
+//    public List<Car> getCars() {
+//        return cars;
+//    }
 }

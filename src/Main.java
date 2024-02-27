@@ -6,7 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+import static park.operations.util.ParkOperationsUtil.findIndexByPlate;
 
 
 public class Main {
@@ -41,13 +41,20 @@ public class Main {
 
         Park promenadaParking = new Park();
         promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B01YAM"));
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B02YAM"));
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B03YAM"));
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B04YAM"));
+        Car car1 = new Car("TESTP2");
+        promenadaParking.enterIntoParking(promenadaParking.getCars(),car1);
+
+        //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B02YAM"));
+        //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B03YAM"));
+        //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B04YAM"));
         promenadaParking.showCars(promenadaParking.getCars());
-        promenadaParking.exitP2(promenadaParking.getCars(),new Car("B01YAM"));
+        promenadaParking.exitP2(promenadaParking.getCars(),car1);
+        //promenadaParking.exitParking(promenadaParking.getCars(),findIndexByPlate("B01YAM",promenadaParking.getCars()));
+
+        //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B05YAM"));
         promenadaParking.showCars(promenadaParking.getCars());
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B05YAM"));
+
+        //promenadaParking.A(promenadaParking.getCars(),0);
 
         // Fix the id problem
 

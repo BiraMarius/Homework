@@ -37,7 +37,7 @@ public class Car extends Vehiclee {
         System.out.println(getId());
         System.out.println(getRegistationNo());
         System.out.println((parkingTimeF()));
-        System.out.println(unParkingTimeF());
+        //System.out.println(unParkingTimeF());
         System.out.println("#####################################");
     }
 

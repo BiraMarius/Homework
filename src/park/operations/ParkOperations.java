@@ -16,33 +16,22 @@ public class ParkOperations implements IParkOperations {
         carAdded.setId(Vehiclee.getLastid());
     }
 
-    public void exitParking(List <Car> cars, int indexOfRemovedCar){
+    public void exitParkingByIndex(List <Car> cars, int indexOfRemovedCar){
         int i=indexOfRemovedCar;
         System.out.println("The car with the registration number of: "+cars.get(i).getRegistationNo()+" was removed.");
         cars.remove(i);
     }
 
-    //          !!!!!!!!!!!!!!!!!!!!! WORKING IN PROGRESS
-    public void exitP(List <Car> cars, Car carAdded){
-        carAdded.getId();
-        System.out.println("The car with the registration number of: "+cars.get(carAdded.getId()).getRegistationNo()+" was removed.");
-        cars.remove(carAdded);
-    }
-
-    public static void exitP2(List <Car> cars, Car carAdded){
+    public void exitParkingByOject(List <Car> cars, Car carAdded){
         System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
         cars.remove(carAdded);
-        Car.setLastid(Car.getLastid()-1);
     }
 
-    public void showCars (List <Car> cars){
-        showParkedCars(cars);
-    }
 /*
     public void pay(List<Car> cars,String registrationNo,String payment){
         LocalDateTime parkingTime = getCarParkingTime(registrationNo, cars);
         LocalDateTime unParkingTime = LocalDateTime.now();
-        //TODO5: Update unparkingtime
+        //TODO 5: Update unparkingtime
         Duration durationOfParking = Duration.between(parkingTime, unParkingTime);
 
         long hours = durationOfParking.toHours();
@@ -56,10 +45,17 @@ public class ParkOperations implements IParkOperations {
             removeParkedCar(index);
         }
 
-        //TODO6: Extract from 31 to 40 2 methods (calculate place in utility) Extract free hour in constant, in util package build another class with constants.
-        //TODO7: https://www.tutorialspoint.com/log4j/log4j_sample_program.htm delete all the System.out.println and use Log4J
-        //TODO8: LinkedList for raports
+        TODO 6 Extract from 31 to 40 2 methods (calculate price in utility) Extract free hour in constant, in util package build another class with constants.
+        TODO 7 https://www.tutorialspoint.com/log4j/log4j_sample_program.htm delete all the System.out.println and use Log4J
+        TODO 8 LinkedList for raports
 
     }
 */
+
+    public void A(List<Car> cars, int index){
+
+        System.out.println(cars.get(index).getRegistationNo());
+        System.out.println(cars.get(index).getId());
+
+    }
 }

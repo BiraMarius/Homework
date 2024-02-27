@@ -40,15 +40,26 @@ public class ParkOperationsUtil extends Object{
         return null;
     }
 
+    /* Time function without ternary operator / short handed if
+
     public static LocalDateTime getCarParkingTime(String registrationNo, List<Car> cars){
         Car car = findCarObjByPlate(registrationNo, cars);
         if(car != null){
             return car.getParkingTime();
         }
         return null;
-        //TODO3 : Rewrite with turner if
+    }
+     */
+
+    //TODO 3 Rewrite with turner if
+    public static LocalDateTime getCarParkingTime(String registrationNumber, List<Car> cars){
+        Car car = findCarObjByPlate(registrationNumber, cars);
+        return  (car!=null) ? car.getParkingTime() : null;
     }
 
+    //variable = (condition) ? expressionTrue :  expressionFalse;
+
+    /* validate function without ternary operator / short handed if
     private static Car validateAndGetNumber(String registrationNo, Car car) {
         if(car.getRegistationNo()!=null){
             if(car.getRegistationNo().equalsIgnoreCase(registrationNo)){
@@ -56,8 +67,13 @@ public class ParkOperationsUtil extends Object{
             }
         }
         return null;
-        //TODO4 : Rewrite with turner if
     }
+     */
 
+    private static Car validateAndGetNumber(String registrationNo, Car car) {
+        return (car.getRegistationNo() != null && car.getRegistationNo().equalsIgnoreCase(registrationNo))
+                ? car
+                : null;
+    }
 
 }
