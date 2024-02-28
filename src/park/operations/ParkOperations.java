@@ -24,7 +24,7 @@ public class ParkOperations implements IParkOperations {
         cars.remove(i);
     }
 
-    public void exitParkingByOject(List <Car> cars, Car carAdded){
+    public void exitParkingByObject(List <Car> cars, Car carAdded){
         System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
         cars.remove(carAdded);
     }
@@ -40,14 +40,7 @@ public class ParkOperations implements IParkOperations {
         cars.remove(car);
     }
 
-    //TODO 6 Extract from 31 to 40 2 methods (calculate price in utility) Extract free hour in constant, in util package build another class with constants.
     //TODO 7 https://www.tutorialspoint.com/log4j/log4j_sample_program.htm delete all the System.out.println and use Log4J
     //TODO 8 LinkedList for raports
 
-    public void A(List<Car> cars, int index){
-
-        System.out.println(cars.get(index).getRegistationNo());
-        System.out.println(cars.get(index).getId());
-
-    }
 }

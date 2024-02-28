@@ -6,13 +6,8 @@ import java.util.List;
 
 public interface IParkOperations {
     void enterIntoParking(List<Car> cars, Car carAdded);
-    void exitParkingByIndex(List<Car> cars, int indexOfRemovedCar); // TODO 1 use object not index
-
-    //public void pay(String registrationNo,String payment);
-
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    void exitParkingByIndex(List<Car> cars, int indexOfRemovedCar);
     void exitParkingByObject(List <Car> cars, Car carAdded);
-    void exitP2(List <Car> cars, Car carAdded);
-
-
+    void paymentWithRegistrationNo(List<Car> cars, String registrationNo, String payment);
+    void paymentWithObject(List<Car> cars, Car car, String payment);
 }

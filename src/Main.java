@@ -39,20 +39,20 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        Park promenadaParking = new Park();
-        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B01YAM"));
-        Car car1 = new Car("TESTP2");
-        promenadaParking.enterIntoParking(promenadaParking.getCars(),car1);
+//        Park promenadaParking = new Park();
+//        promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B01YAM"));
+//        Car car1 = new Car("TESTP2");
+//        promenadaParking.enterIntoParking(promenadaParking.getCars(),car1);
 
         //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B02YAM"));
         //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B03YAM"));
         //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B04YAM"));
-        promenadaParking.showCars(promenadaParking.getCars());
-        promenadaParking.exitP2(promenadaParking.getCars(),car1);
+//        promenadaParking.showCars(promenadaParking.getCars());
+//        promenadaParking.exitP2(promenadaParking.getCars(),car1);
         //promenadaParking.exitParking(promenadaParking.getCars(),findIndexByPlate("B01YAM",promenadaParking.getCars()));
 
         //promenadaParking.enterIntoParking(promenadaParking.getCars(), new Car("B05YAM"));
-        promenadaParking.showCars(promenadaParking.getCars());
+//        promenadaParking.showCars(promenadaParking.getCars());
 
         //promenadaParking.A(promenadaParking.getCars(),0);
 
