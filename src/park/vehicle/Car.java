@@ -10,7 +10,6 @@ public class Car extends Vehiclee {
 
     @Override
     public void park(){
-
         System.out.println("##################  TICKET  #####################\n" +
                            "Registration number plate:  "+getRegistationNo()+"\n"+
                            "Parking details:  "+parkingTimeF()+"\n"+
@@ -20,16 +19,18 @@ public class Car extends Vehiclee {
 
     public String parkingTimeF(){
         LocalDateTime parkingTime = getParkingTime();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
-        String formattedParkingTime = parkingTime.format(formatter);
-        return formattedParkingTime;
+        return timeFormatter(parkingTime);
     }
 
     public String unParkingTimeF(){
         LocalDateTime unParkingTime = LocalDateTime.now();
+        return timeFormatter(unParkingTime);
+    }
+
+    public String timeFormatter(LocalDateTime time){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
-        String formattedunParkingTime = unParkingTime.format(formatter);
-        return formattedunParkingTime;
+        String formattedTime = time.format(formatter);
+        return formattedTime;
     }
 
     public void details(){
