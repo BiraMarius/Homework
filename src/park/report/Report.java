@@ -4,14 +4,15 @@ import java.time.LocalDateTime;
 
 public class Report {
     private static int id;
-    private LocalDateTime date;
-    private static int carsIn;
-    private static int carsOut;
-    private static int carsLeft;
+    private String date;
+    private int carsIn;
+    private int carsOut;
+    private int carsLeft;
     private static long income;
 
-    public Report(LocalDateTime date) {
+    public Report(String date) {
         this.date = date;
+        id++;
     }
 
     public static int getId() {
@@ -22,43 +23,35 @@ public class Report {
         Report.id = id;
     }
 
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public static int getCarsIn() {
+    public int getCarsIn() {
         return carsIn;
     }
 
-    public static void setCarsIn(int carsIn) {
-        Report.carsIn = carsIn;
+    public void setCarsIn(int carsIn) {
+        this.carsIn = carsIn;
     }
 
-    public static int getCarsOut() {
+    public int getCarsOut() {
         return carsOut;
     }
 
-    public static void setCarsOut(int carsOut) {
-        Report.carsOut = carsOut;
+    public void setCarsOut(int carsOut) {
+        this.carsOut = carsOut;
     }
 
-    public static int getCarsLeft() {
+    public int getCarsLeft() {
         return carsLeft;
     }
 
-    public static void setCarsLeft(int carsLeft) {
-        Report.carsLeft = carsLeft;
+    public void setCarsLeft(int carsLeft) {
+        this.carsLeft = carsLeft;
     }
 
-    public static long getIncome() {
+    public long getIncome() {
         return income;
     }
 
-    public static void setIncome(long income) {
-        Report.income = income;
+    public void setIncome(long income) {
+        this.income = income;
     }
 }

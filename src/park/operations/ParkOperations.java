@@ -1,7 +1,9 @@
 package park.operations;
-
+import park.report.Report;
 import park.vehicle.Car;
 import park.vehicle.Vehiclee;
+import park.report.Report.*;
+import park.report.ReportOperations.*;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -15,7 +17,6 @@ public class ParkOperations implements IParkOperations {
         cars.add(carAdded);
         carAdded.setParkingTime(LocalDateTime.now());
         carAdded.park();
-        //carAdded.setId(Vehiclee.getLastid());
     }
 
     public void exitParkingByIndex(List <Car> cars, int indexOfRemovedCar){
@@ -34,9 +35,11 @@ public class ParkOperations implements IParkOperations {
         paymentWithObject(cars, car, payment);
     }
 
-    public void paymentWithObject(List<Car> cars, Car car, String payment){
+    public void paymentWithObject(List<Car> cars, List<Report> reports, Car car, String payment){
         car.setPayment(payment);
         priceCalculator(duration(cars, car));
+        searchReportByDate
+        calculateIncome(Report report, int price);
         cars.remove(car);
     }
 
@@ -44,3 +47,4 @@ public class ParkOperations implements IParkOperations {
     //TODO 8 LinkedList for raports
 
 }
+

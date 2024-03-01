@@ -5,6 +5,8 @@ import park.vehicle.Car;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static park.operations.util.ParkOperationsUtil.findIndexByPlate;
 
@@ -58,8 +60,25 @@ public class Main {
 
         // Fix the id problem
 
+        String dateTimeString = "2024-03-01 12:30:45";
+
+        // Define a DateTimeFormatter
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        // Parse the String into a LocalDateTime
+        LocalDateTime parsedDateTime = LocalDateTime.parse(dateTimeString, formatter);
+
+        // Print the parsed date-time
+        System.out.println("Parsed LocalDateTime: " + parsedDateTime);
+
 
 
     }
+//    public LocalDateTime timeFormatter(LocalDateTime time){
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        DateTimeFormatter formattedTime = time.format(formatter);
+//        return formattedTime;
+//    }
+
 }
 

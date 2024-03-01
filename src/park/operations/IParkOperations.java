@@ -9,5 +9,5 @@ public interface IParkOperations {
     void exitParkingByIndex(List<Car> cars, int indexOfRemovedCar);
     void exitParkingByObject(List <Car> cars, Car carAdded);
     void paymentWithRegistrationNo(List<Car> cars, String registrationNo, String payment);
-    void paymentWithObject(List<Car> cars, Car car, String payment);
+    //void paymentWithObject(List<Car> cars, Car car, String payment);
 }
