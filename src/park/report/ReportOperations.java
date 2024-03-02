@@ -52,5 +52,6 @@ public class ReportOperations {
 
     //TODO: Check if the verifications in search are correct, in LocalDate is the date and hour
     //TODO: store the date into String in Report, and check equals strings.
+    //Update Park operation with Report functions
 
 }
