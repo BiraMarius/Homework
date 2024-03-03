@@ -10,13 +10,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static park.operations.util.ParkOperationsUtil.*;
+import static park.report.ReportOperations.*;
 
 public class ParkOperations implements IParkOperations {
 
-    public void enterIntoParking(List<Car> cars, Car carAdded){
+    public void enterIntoParking(List<Car> cars, List<Report> reports, Car carAdded){
         cars.add(carAdded);
         carAdded.setParkingTime(LocalDateTime.now());
         carAdded.park();
+        addRCarsToCt(searchReportByDate(reports, timeFormatter(LocalDateTime.now())));
     }
 
     public void exitParkingByIndex(List <Car> cars, int indexOfRemovedCar){
@@ -30,18 +32,19 @@ public class ParkOperations implements IParkOperations {
         cars.remove(carAdded);
     }
 
-    public void paymentWithRegistrationNo(List<Car> cars, String registrationNo, String payment){
+
+    public void paymentWithRegistrationNo(List<Car> cars, List<Report> reports, String registrationNo, String payment){
         Car car = findCarObjByPlate(registrationNo, cars);
-        paymentWithObject(cars, car, payment);
+        paymentWithObject(cars, reports, car, payment);
     }
 
     public void paymentWithObject(List<Car> cars, List<Report> reports, Car car, String payment){
         car.setPayment(payment);
-        priceCalculator(duration(cars, car));
-        searchReportByDate
-        calculateIncome(Report report, int price);
+        calculateIncome(searchReportByDate(reports, timeFormatter(LocalDateTime.now())),  priceCalculator(duration(cars, car)));
         cars.remove(car);
     }
+
+
 
     //TODO 7 https://www.tutorialspoint.com/log4j/log4j_sample_program.htm delete all the System.out.println and use Log4J
     //TODO 8 LinkedList for raports

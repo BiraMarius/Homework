@@ -54,4 +54,12 @@ public class Report {
     public void setIncome(long income) {
         this.income = income;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

@@ -14,7 +14,7 @@ public class Park extends ParkOperations {
     private List<Report> reports = new LinkedList<>();
 
     public void enter(Car car){
-        super.enterIntoParking(cars, car);
+        super.enterIntoParking(cars, reports, car);
     }
 
     public List<Car> getCars() {

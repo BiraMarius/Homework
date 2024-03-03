@@ -5,9 +5,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class ReportOperations {
+public class ReportOperations implements IReportOperations {
     public static Report searchReportByDate(List<Report> reports, String date){
-
             for(int i=0; i<reports.size(); i++){
                 if(reports.get(i).getDate().equals(date)){
                       return reports.get(i);
@@ -44,7 +43,7 @@ public class ReportOperations {
 
     }
 
-    public String timeFormatter(LocalDateTime time){
+    public static String timeFormatter(LocalDateTime time){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formattedTime = time.format(formatter);
         return formattedTime;
