@@ -24,7 +24,7 @@ public class ReportOperations implements IReportOperations {
         report.setCarsIn(report.getCarsIn()+1);
     }
 
-    public static void addRCarsToCt(Report report){
+    public static void removedCarsToCt(Report report){
         report.setCarsOut(report.getCarsOut()+1);
     }
 
@@ -47,6 +47,16 @@ public class ReportOperations implements IReportOperations {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formattedTime = time.format(formatter);
         return formattedTime;
+    }
+
+    public static void saveReport(Report report, LocalDateTime date){
+        System.out.println("              REPORT               \n"+
+                           "Date of the report: "+report.getDate()+"\n"+
+                           "Cars that entered: "+report.getCarsIn()+"\n"+
+                           "Cars that leaved: "+report.getCarsOut()+"\n"+
+                           "Cars left: "+report.getCarsLeft()+"\n"+
+                           "Income: "+report.getIncome()+"\n"+
+                           "---------------------------------------");
     }
 
     //TODO: Check if the verifications in search are correct, in LocalDate is the date and hour

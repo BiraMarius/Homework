@@ -18,17 +18,19 @@ public class ParkOperations implements IParkOperations {
         cars.add(carAdded);
         carAdded.setParkingTime(LocalDateTime.now());
         carAdded.park();
-        addRCarsToCt(searchReportByDate(reports, timeFormatter(LocalDateTime.now())));
+        addCarsToCt(searchReportByDate(reports, timeFormatter(LocalDateTime.now())));
     }
 
-    public void exitParkingByIndex(List <Car> cars, int indexOfRemovedCar){
+    public void exitParkingByIndex(List <Car> cars, List<Report> reports, int indexOfRemovedCar){
         int i=indexOfRemovedCar;
-        System.out.println("The car with the registration number of: "+cars.get(i).getRegistationNo()+" was removed.");
+        //System.out.println("The car with the registration number of: "+cars.get(i).getRegistationNo()+" was removed.");
+        removedCarsToCt(searchReportByDate(reports, timeFormatter(LocalDateTime.now())));
         cars.remove(i);
     }
 
-    public void exitParkingByObject(List <Car> cars, Car carAdded){
-        System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
+    public void exitParkingByObject(List <Car> cars, List<Report> reports, Car carAdded){
+        //System.out.println("The car with the registration number of: "+carAdded.getRegistationNo()+" was removed.");
+        removedCarsToCt(searchReportByDate(reports, timeFormatter(LocalDateTime.now())));
         cars.remove(carAdded);
     }
 
