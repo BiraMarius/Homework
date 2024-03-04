@@ -1,8 +1,12 @@
 package park.report;
 import park.vehicle.Car;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class ReportOperations implements IReportOperations {
@@ -17,7 +21,31 @@ public class ReportOperations implements IReportOperations {
     public static Report createNewReport(List<Report> reports, String date){
         Report report = new Report(date);
         reports.add(report);
+        saveInDataBase();
         return report;
+    }
+
+    public static Report searchReportYesterday(){
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        LocalDateTime yesterdayDateTime = currentDateTime.minus(1, ChronoUnit.DAYS);
+    }
+
+    public static void saveInDataBase(Report report, String date){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("GeneratedReports.txt", true))) {
+            writer.write("\n");
+            System.out.println( "---------------------------------------\n"+
+                                "              REPORT               \n"+
+                                "Date of the report: "+report.getDate()+"\n"+
+                                "Cars that entered: "+report.getCarsIn()+"\n"+
+                                "Cars that leaved: "+report.getCarsOut()+"\n"+
+                                "Cars left: "+report.getCarsLeft()+"\n"+
+                                "Income: "+report.getIncome()+"\n"+
+                                "---------------------------------------");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public static void addCarsToCt(Report report){
@@ -49,8 +77,9 @@ public class ReportOperations implements IReportOperations {
         return formattedTime;
     }
 
-    public static void saveReport(Report report, LocalDateTime date){
-        System.out.println("              REPORT               \n"+
+    public static void printReport(Report report, String date){
+        System.out.println("---------------------------------------\n"+
+                           "              REPORT               \n"+
                            "Date of the report: "+report.getDate()+"\n"+
                            "Cars that entered: "+report.getCarsIn()+"\n"+
                            "Cars that leaved: "+report.getCarsOut()+"\n"+
