@@ -1,8 +1,9 @@
 package park.vehicle;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public abstract class Vehiclee {
+public abstract class Vehiclee implements Serializable {
     private static int counter;
     private static int lastid;
     private int id;

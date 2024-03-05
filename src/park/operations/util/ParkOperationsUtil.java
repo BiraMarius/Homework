@@ -11,7 +11,7 @@ public class ParkOperationsUtil extends Object{
 
     public static void showParkedCars(List <Car> cars){
         for(int i=0; i<=cars.size()-1;i++){
-            cars.get(i).details();
+            cars.get(i).getRegistationNo();
         }
     }
 

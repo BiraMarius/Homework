@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 public class Report {
     private static int id;
     private String date;
-    private int carsIn;
-    private int carsOut;
-    private int carsLeft;
-    private static long income;
+    private int carsIn=0;
+    private int carsOut=0;
+    private int carsLeft=0;
+    private static long income=0;
 
     public Report(String date) {
         this.date = date;

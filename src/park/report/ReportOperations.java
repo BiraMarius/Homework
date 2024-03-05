@@ -21,13 +21,13 @@ public class ReportOperations implements IReportOperations {
     public static Report createNewReport(List<Report> reports, String date){
         Report report = new Report(date);
         reports.add(report);
-        saveInDataBase();
         return report;
     }
 
-    public static Report searchReportYesterday(){
+    public static Report searchReportYesterday(List<Report> reports){
         LocalDateTime currentDateTime = LocalDateTime.now();
         LocalDateTime yesterdayDateTime = currentDateTime.minus(1, ChronoUnit.DAYS);
+        return searchReportByDate(reports, timeFormatter(yesterdayDateTime));
     }
 
     public static void saveInDataBase(Report report, String date){
@@ -56,19 +56,15 @@ public class ReportOperations implements IReportOperations {
         report.setCarsOut(report.getCarsOut()+1);
     }
 
-    public static void carsLeft(Report report){
+    public static int carsLeft(Report report){
         int carsLeft = report.getCarsIn()-report.getCarsOut();
         report.setCarsLeft(carsLeft);
+        return carsLeft;
     }
 
     public static long calculateIncome(Report report, int price){
         report.setIncome(report.getIncome()+price);
         return report.getIncome();
-    }
-
-    public static void completeReport(List<Report> reports, Car car, int price){
-        calculateIncome(searchReportByDate(reports, car.timeFormatter(car.getUnParkingTime())), price);
-
     }
 
     public static String timeFormatter(LocalDateTime time){
@@ -77,19 +73,15 @@ public class ReportOperations implements IReportOperations {
         return formattedTime;
     }
 
-    public static void printReport(Report report, String date){
+    public static void printReport(Report report){
         System.out.println("---------------------------------------\n"+
                            "              REPORT               \n"+
                            "Date of the report: "+report.getDate()+"\n"+
                            "Cars that entered: "+report.getCarsIn()+"\n"+
                            "Cars that leaved: "+report.getCarsOut()+"\n"+
-                           "Cars left: "+report.getCarsLeft()+"\n"+
+                           "Cars left: "+carsLeft(report)+"\n"+
                            "Income: "+report.getIncome()+"\n"+
                            "---------------------------------------");
     }
-
-    //TODO: Check if the verifications in search are correct, in LocalDate is the date and hour
-    //TODO: store the date into String in Report, and check equals strings.
-    //Update Park operation with Report functions
 
 }

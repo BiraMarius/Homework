@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 import static park.operations.util.ParkOperationsUtil.findIndexByPlate;
 
@@ -57,19 +58,59 @@ public class Main {
 //        promenadaParking.showCars(promenadaParking.getCars());
 
         //promenadaParking.A(promenadaParking.getCars(),0);
+        Park BaneasaP = new Park();
+        Scanner sc = new Scanner(System.in);
+        int startStop = 0;
+        String carRN;
+        System.out.println("1 - Add \n" +
+                "            2 - Pay cash \n" +
+                "            3 - Pay card \n" +
+                "            4 - Report of the day \n" +
+                "            5 - Save report to bd \n" +
+                "            6 - EXIT \n" +
+                "            7 - List \n");
 
-        // Fix the id problem
+        while(startStop != 1){
+            String option = sc.nextLine();
+            int intoption = Integer.valueOf(option);
+            switch(intoption){
 
-        String dateTimeString = "2024-03-01 12:30:45";
+                case 1: //Adding car to the parking
+                        System.out.println("Please enter car registration number: ");
+                        carRN = sc.nextLine();
+                        BaneasaP.enter(new Car(carRN));
+                        break;
 
-        // Define a DateTimeFormatter
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                case 2: //Cash payment
+                        System.out.println("Please enter car registration number for payment: ");
+                        carRN = sc.nextLine();
+                        BaneasaP.pay(carRN,"CASH");
+                        break;
 
-        // Parse the String into a LocalDateTime
-        LocalDateTime parsedDateTime = LocalDateTime.parse(dateTimeString, formatter);
+                case 3: //Card payment
+                        System.out.println("Please enter car registration number for payment: ");
+                        carRN = sc.nextLine();
+                        BaneasaP.pay(carRN,"CARD");
+                        break;
 
-        // Print the parsed date-time
-        System.out.println("Parsed LocalDateTime: " + parsedDateTime);
+                case 4: //Show report of the day
+                        System.out.println("Report for today till this time.");
+                        BaneasaP.showReport();
+                        break;
+
+                case 5: //save report
+                        break;
+
+                case 6: System.out.println("Shuting down.");
+                        startStop=1;
+                        break;
+
+                case 7: //Show all parked cars.
+                        //BaneasaP.showParkedCars();
+                        BaneasaP.showPc();
+                        break;
+            }
+        }
 
 
 
@@ -79,6 +120,9 @@ public class Main {
 //        DateTimeFormatter formattedTime = time.format(formatter);
 //        return formattedTime;
 //    }
+
+
+
 
 }
 
