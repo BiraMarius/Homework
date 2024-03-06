@@ -22,6 +22,9 @@ Tema>
    Un raport are ID, Data, nr masini intrate, nr masini iesite, nr masini lasate in parcare, total incasari.
    Extrage toate obiectele de tip raport in fiesier .txt
    Serializare cu fisiere
+   exceptii
+   hashmap
+   enum
 
    Links>
     Andrei Bartic
@@ -45,3 +48,7 @@ Tema>
     Andrei Bartic
     19:33
     https://www.digitalocean.com/community/tutorials/serialization-in-java
+
+    ------------------------------
+    06.03.2024
+
